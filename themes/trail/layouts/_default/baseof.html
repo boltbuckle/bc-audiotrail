@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  {{ partial "head.html" . }} 
+<body>
+  {{ partial "sidebar.html" . -}}
+  <div class="overlay"></div>
+  {{- partial "nav.html" . | safeHTML -}}
+  {{ if (isset .Params "jumbo_cover") }} {{- partial "jumbo_header" . }}{{- end }}
+	<main  class="container">
+    <div class="row">
+      {{- block "search_results" . }}{{- end }}
+      {{- block "main" . }}{{- end }}
+    </div>
+    <div class="fixed-bottom">
+      {{- partial "footer.html" . | safeHTML }}
+    </div>
+  </main>
+  {{partial "scripts_body.html" . }}
+</body>
+</html>

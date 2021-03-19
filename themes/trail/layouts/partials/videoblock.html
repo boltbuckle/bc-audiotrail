@@ -1,0 +1,8 @@
+{{- define "video_player" -}} 
+{{- if (isset .Params "vid") -}}
+{{- partial "videoplayer" . -}}
+{{- end -}}
+{{- if (isset .Params "vidlink") -}}
+{{- partial "videolink" . -}}
+{{- end -}}
+{{- end -}}

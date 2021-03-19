@@ -1,0 +1,42 @@
+@-webkit-keyframes plyr-progress {
+  to {
+    background-position: var(--plyr-progress-loading-size, 25px) 0; } }
+
+@keyframes plyr-progress {
+  to {
+    background-position: var(--plyr-progress-loading-size, 25px) 0; } }
+
+@-webkit-keyframes plyr-popup {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes plyr-popup {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@-webkit-keyframes plyr-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes plyr-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+/* stylelint-disable-next-line */
+/* stylelint-disable-next-line */
+/* stylelint-disable-next-line */

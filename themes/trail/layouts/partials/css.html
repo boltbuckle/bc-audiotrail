@@ -1,0 +1,11 @@
+{{- $themeColor := "white.scss" -}}
+{{- $style := resources.Get $themeColor -}}
+{{- $mainCssPath := resources.Get "main.scss" -}}
+{{- $CSS := slice   $mainCssPath $style | resources.Concat "pekdruppel.scss" | toCSS | resources.PostCSS | resources.Minify  }}
+{{- $fontCssPath := resources.Get "fonts.css" -}}
+{{- $plyrCssPath := resources.Get "thirdparty/plyr/src/sass/plyr.scss"| toCSS | minify -}}
+{{- $mcsCssPath := resources.Get "thirdparty/mcs/jquery.mCustomScrollbar.min.css" | minify -}}
+  <link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
+  <link href="{{ $CSS.RelPermalink }}" rel="stylesheet">
+  <link href="{{ $plyrCssPath.RelPermalink }}" rel="stylesheet">
+  <link href="{{ $fontCssPath.RelPermalink }}" rel="stylesheet">

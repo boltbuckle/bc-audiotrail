@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="col-md-12">
+<div class="cover-wrap">
+<h1>{{ .Title }}<h1><img style="object-fit: contain; object-position: 0% 0%;"  src="{{ .Permalink }}../image/{{ .Params.cover  }}"  alt="ff" width="100%" height="100%"></div>
+<div class="cover-caption">{{ .Content  }}</div>
+</div>
+<div class="col-md-12 trail-1">
+	
+		<ol type="">{{ range .RegularPages  }}
+  		  <li>   <!--{{ .Render "li"}}-->
+			  <a href="{{ .RelPermalink}}">{{ .Params.Tag }}|{{ .Params.Title}} </a>
+    		  Title: {{- .Title -}} --- {{ .URL }}
+  		  </li>
+    	  {{ end }}
+	  </ol>
+</div>
+{{ end }}
+
+{{ define "audio_player" }} 
+  {{ if (isset .Params "am") }}
+	  {{ partial "plyr" . }}
+	  {{ else }}{{ "No Audio i" }}
+  {{ end }}
+{{end}}

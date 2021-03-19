@@ -1,0 +1,20 @@
+<div class="col-md-12 navbar .navbar-light navbar-expand-md navbar-white stick-to-top">
+	<a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="line"></span> 
+        <span class="line"></span> 
+        <span class="line"></span>
+        <!--i class="fas fa-bars" style="color:#000; font-size:28px;"></i-->
+      </button>
+  <!--div class= "nav-wrap-1 position-fixed"-->
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    	<ul class="navbar-nav mr-auto">
+    {{- range .Site.Menus.main }}
+  
+    <li class="nav-item active"><a class="nav-link" href="{{ .URL }}">{{ .Name }}</a></li>
+     {{- end }}
+ </ul>
+    <!--/div-->
+  </div>
+</div>
+

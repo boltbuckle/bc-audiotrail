@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="robots" content="follow"/>
+  <meta name="description" content="{{- .Site.Params.meta_desc -}}"/>
+  <meta name="author" content="{{- .Site.Params.meta_author -}}"/>
+  <meta name="keywords" content="{{- .Site.Params.meta_keywords -}}"/>
+  {{ hugo.Generator }}
+  <title>
+  {{- .Site.Params.sitename }} - {{ .Name -}}
+  </title>
+  {{ partial "css.html" -}}
+  {{- partial "scripts_head.html" . -}}
+</head>

@@ -1,0 +1,49 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Pek Druppel"
+theme = "trail"
+publishdir = "../boltbuckle.github.io"
+# Pluralize titles in lists using inflect
+pluralizeListTitles = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+	sitename = "Pek Druppel Audio Trail"
+	description = "Trails and Traces"
+	show_on_homepage = "trail-2021"
+	meta_author = "EVdV"
+	meta_desc = "Audio Diary"
+	meta_keywords = "media"
+	indexname = "home"
+	themecolor = "white"
+
+[menu]
+    [[menu.main]]
+		identifier = "Home"
+        name = "Home"
+        url = "/"
+        weight = -500
+	[[menu.main]]
+    	identifier = "Trail 2021"
+    	name = "Trail 2021"
+    	Title = "Title"
+    	kwak = "tuut"
+    	LinkTitle = "LinkTitle"
+    	url = "/trail-2021/"
+    	weight = -400
+	[[menu.main]]
+     	identifier = "Trail 2022"
+     	name = "Trail 2022"
+     	url = "/trail-2022/"
+     	weight = -300
+    [[menu.main]]
+        identifier = "Collection"
+        name = "Collection"
+        url = "/collection"
+        weight = -50
+
+[build]
+  writeStats = true
+  

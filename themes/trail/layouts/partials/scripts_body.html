@@ -1,0 +1,33 @@
+{{ $pp_Path := resources.Get "js/popper.min.js" -}}
+{{ $sb_Path := resources.Get "js/jquery.mCustomScrollbar.concat.min.js" -}}
+{{ $jq_Path := resources.Get "js/jquery-3.6.0.min.js" -}}
+{{ $bs_Path := resources.Get "js/bootstrap.bundle.min.js" -}}
+{{ $mark_Path := resources.Get "js/jquery.mark.min.js" -}}
+{{ $fuse_Path := resources.Get "js/fuse.min.js" -}}
+{{ $search_Path := resources.Get "js/search.js" }}
+{{ $js := slice $jq_Path $bs_Path $pp_Path $sb_Path $mark_Path $fuse_Path $search_Path | resources.Concat "js/bundledmin.js"  | resources.Minify }}
+<script src={{ $js.RelPermalink }}></script> 
+<script>
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+</script>
+<script>
+const player = new Plyr('#player', { 
+controls: ['play-large','restart','play','progress','current-time','duration', 'mute','volume','download', ],
+});
+</script>

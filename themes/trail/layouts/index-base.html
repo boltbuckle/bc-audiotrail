@@ -1,0 +1,19 @@
+
+{{ define "main" }}
+<div class="col-md-2">
+		<!--p>{{ .Content }}</p-->
+
+		{{ partial "nav.html" . }}
+
+</div>
+<div class="col-md-10">
+	{{ $latest := .Site.Param "show_on_homepage"}}
+		<ol type="1">{{ range where .Site.RegularPages "Section" $latest }}
+  		  <li> 
+			  <a href="{{ .RelPermalink}}">{{ .Params.Title}}</a>
+    		  Title: {{- .Title -}} --- {{ .RelPermalink }}
+  		  </li>
+    	  {{ end }}
+	  </ol>
+</div>
+{{ end }}

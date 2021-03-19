@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="col-md-10 offset-md-1">
+  <div class="info-panel" >
+    <div class="info-panel-title">
+      <!--h1>{{ .Title }}</h1--> 
+    </div>
+    <div class="info-panel-content" >
+      <div class="talk-about">{{ .Content  }}
+      </div>
+      {{ if .Params.cover }} 
+      <div class="cover-wrap"><img style="object-fit: contain; object-position: 100% 0%;"  src="{{ .Permalink }}../pix/{{ .Params.cover  }}"  alt="" width="100%" height="100%">
+      </div>
+     {{ end }}
+    </div>
+</div>
+<div class="trail-1">
+	{{ $latest := .Site.Param "show_on_homepage"}}
+	<ul>
+    {{- range (  site.RegularPages  | first 5 ) }}
+    <li class="traces focus">
+      <a id="{{ .RelPermalink}}" class="traces d-flex flex-row  active" href="{{ .RelPermalink}}">
+        <div class="d-flex flex-column">
+          <div class="first d-flex flex-row pt">
+            <div class="trace-title pt">{{- .Title }}</div>
+            <div class="trace-tag pt">{{- .Params.Tag }}</div>
+          </div>
+          <div class="second d-flex flex-row pt">
+            <div class="trace-desc  pt">{{- .Params.Desc -}}</div>
+          </div> 
+        </div>    
+            {{- if .Params.badge }}
+            <div class="trace-play pt"><img style="object-fit: scale-down; object-position: 100% 0%; width:100%; height:100%;"  src="{{ .Permalink }}../pix/{{ .Params.badge  }}"  alt=""></div>
+          {{- end }}
+        </a>
+      </li>
+    {{- end }}
+	</ul>
+</div>
+</div>
+{{- end -}}
