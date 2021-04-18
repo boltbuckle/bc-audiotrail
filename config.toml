@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Pek Druppel"
 theme = "trail"
-publishdir = "../boltbuckle.github.io"
+publishdir = "public"
 # Pluralize titles in lists using inflect
 pluralizeListTitles = false
 enableInlineShortcodes = true
