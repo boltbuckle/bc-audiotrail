@@ -1,8 +1,8 @@
 {{- define "audio_player" -}} 
-{{- if (isset .Params "am") -}}
+{{- if or (isset .Params "am") (isset .Params "audio_url") -}}
 {{- partial "plyr" . -}}
 {{- else -}}
-<div class="no-audio-playing p-1"><p>{{ "No Audio Playing" }}</p>
+<div class="no-audio-playing p-1"><p>{{ "No Audio is Playing" }}</p>
 </div>
 {{- end -}}
 {{- end -}}

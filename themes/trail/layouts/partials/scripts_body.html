@@ -5,7 +5,7 @@
 {{ $mark_Path := resources.Get "js/jquery.mark.min.js" -}}
 {{ $fuse_Path := resources.Get "js/fuse.min.js" -}}
 {{ $search_Path := resources.Get "js/search.js" }}
-{{ $js := slice $jq_Path $bs_Path $pp_Path $sb_Path $mark_Path $fuse_Path $search_Path | resources.Concat "js/bundledmin.js"  | resources.Minify }}
+{{ $js := slice $jq_Path $pp_Path $sb_Path $mark_Path $fuse_Path $search_Path | resources.Concat "js/bundledmin.js"  | resources.Minify }}
 <script src={{ $js.RelPermalink }}></script> 
 <script>
         $(document).ready(function () {

@@ -5,6 +5,7 @@ theme = "trail"
 publishdir = "../boltbuckle.github.io"
 # Pluralize titles in lists using inflect
 pluralizeListTitles = false
+enableInlineShortcodes = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -46,4 +47,9 @@ pluralizeListTitles = false
 
 [build]
   writeStats = true
+  
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   

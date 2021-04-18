@@ -1,4 +1,6 @@
 <div class="jumbotron" style="background-image: url('../pix/{{ .Params.jumbo_cover }}');background-size: cover;">
-	<h1 class="display-4"></h1>
+	{{- if .Params.jumbo_title -}}
+  <h1 class="display-4">{{ .Params.jumbo_title }}</h1>
+  {{- end -}}
   <p class="lead"></p>
 </div>
